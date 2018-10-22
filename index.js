@@ -9,19 +9,12 @@ const init = require('./init.js');
 
     const {browser, page} = await init();
 
-    let iter = tasks;
-
-    
-
-    await tasks[0].do(browser);
-
-    // await tasks[1].do(browser);
-
     // for(let task of tasks){
-
     //     console.log(`start ${task.name} test\n`);
-    //     await task.do();
-
+    //     await task.do(page);
     // }
+
+    await browser.close();
     
 })();
+

@@ -6,7 +6,7 @@ const LOGIN_URL = '';
 
 async function run(params) {
     const browser = await puppeteer.launch({
-        headless: false
+        // headless: false
     });
 
     const page = await browser.newPage();

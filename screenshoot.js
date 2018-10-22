@@ -30,15 +30,17 @@ const IPHONE_X = {
     await page.waitFor(200);
     let len = 1;
 
+    console.log(new Date());
+    console.log('page loading......');
     while (len > 0) {
         len = await page.$$eval('#page-content .img_loading', (loadings) => {
-
             if (loadings.length) loadings[0].scrollIntoView();
             return loadings.length;
         });
-        console.log(`len is :${len}`)
+        console.log(`current loading imgs count: ${len}`);
+        await page.waitFor(1000);
     }
-
+    console.log('page loaded!!');
     let result = await page.evaluate(() => {
         const scrollElement = document.querySelector('#page-content');
         const titleElem = document.querySelector('#activity-name');
@@ -51,9 +53,10 @@ const IPHONE_X = {
 
     console.log('start screenshootting......');
     await page.screenshot({
-        path: `${result.title}.jpg`
+        path: `./output/${result.title}.jpg`
     });
-    console.log('finish screenshoot')
+    console.log('finish screenshoot');
+    console.log(new Date());
 
     await browser.close();
 

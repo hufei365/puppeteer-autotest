@@ -9,14 +9,12 @@ const FORM = {
     PASSWORD : 'Wuxin123'
 };
 
-async function enter(browser){
+async function enter(page){
 
     // const page = await browser.newPage();
     // page.setViewport(PAGE_OPTIONS);
     await page.goto(HOME_URL);
     await login(page);
-    await page.close();
-
 }
 
 async function login( page ){
@@ -29,6 +27,7 @@ async function login( page ){
     await pass.type(FORM.PASSWORD);
 
     await page.click('.btn-login');
+    await page.waitForNavigation();
 }
 
 module.exports = enter;

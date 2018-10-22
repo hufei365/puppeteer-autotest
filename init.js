@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer');
 
 const PAGE_OPTIONS = {
-    width: 2048,
-    height: 1152
+    width: 1400,
+    height: 1080
 };
 
 
@@ -12,10 +12,13 @@ async function init() {
 
     const browser = await puppeteer.launch({
         headless: false
+        ,args: [
+            '--window-size=1200,900'
+        ]
     });
     const page = await browser.newPage();
 
-    page.setViewport(Object.assign({}, PAGE_OPTIONS));
+    // page.setViewport(Object.assign({}, PAGE_OPTIONS));
 
     // 启用 JavaScript 和 CSS 覆盖
     await Promise.all([
@@ -25,6 +28,9 @@ async function init() {
 
     // 导航至页面
     await page.goto('https://jiaoshi.okjiaoyu.cn');
+
+    // await page.evaluate('document.documentElement.webkitRequestFullscreen()');
+// await page.waitFor(5000);
 
 
     // 禁用 JavaScript 和 CSS 覆盖
@@ -42,8 +48,6 @@ async function init() {
             usedBytes += range.end - range.start - 1;
     }
     console.log(`Bytes used: ${usedBytes / totalBytes * 100}%`);
-
-
 
     return {
         browser: browser,

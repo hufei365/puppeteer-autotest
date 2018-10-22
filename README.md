@@ -16,3 +16,7 @@
 [Puppeteer 与 Chrome Headless —— 从入门到爬虫](https://github.com/csbun/thal)
 
 [Puppeteer: 更友好的 Headless Chrome Node API](http://www.cnblogs.com/dolphinX/p/7715268.html)
+
+[前端自动化测试 之 视觉测试](https://segmentfault.com/a/1190000014720175?utm_source=tag-newest)
+
+[jest——Delightful JavaScript Testing](https://jestjs.io/blog/)

@@ -14,7 +14,7 @@ const init = require('./init.js');
     //     await task.do(page);
     // }
 
-    await browser.close();
+    // await browser.close();
     
 })();
 

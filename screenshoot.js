@@ -60,8 +60,4 @@ const IPHONE_X = {
 
     await browser.close();
 
-
-
-
-
 })();

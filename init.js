@@ -8,11 +8,9 @@ const PAGE_OPTIONS = {
 
 async function init() {
 
-
-
     const browser = await puppeteer.launch({
         headless: false
-        ,args: [
+        , args: [
             '--window-size=1200,900'
         ]
     });
@@ -30,7 +28,7 @@ async function init() {
     await page.goto('https://jiaoshi.okjiaoyu.cn');
 
     // await page.evaluate('document.documentElement.webkitRequestFullscreen()');
-// await page.waitFor(5000);
+    // await page.waitFor(5000);
 
 
     // 禁用 JavaScript 和 CSS 覆盖

@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "puppeteer": "^1.9.0"
+  },
+  "dependencies": {
+    "mongoose": "^5.3.6"
   }
 }
